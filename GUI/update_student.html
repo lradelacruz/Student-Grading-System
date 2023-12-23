@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UPDATE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Font -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> <!-- Icons -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> <!-- Font -->
+        <link href="images/icon.png" rel="icon">
+
+     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap');
+
+    *{
+        font-family: 'poppins' ,sans-serif;
+        color: white;
+    }
+
+    body {
+	    background-image: url('https://images.squarespace-cdn.com/content/v1/5bbc6cb393a6324308c958c5/1544791082505-0R530OCFC7COIRWT9H48/Blessed+Rinaldi+Building.jpg?format=2500w');
+	    background-size: cover;
+	    background-attachment: fixed;
+	    font-family: Poppins, sans-serif;
+    }
+
+    .logo1{
+     width: 50px;
+     height: 10px;
+     margin-top: 20px;
+     margin-left: 20px;
+     }
+
+    </style>
+</head>
+<body background="https://png.pngtree.com/background/20210706/original/pngtree-flat-child-student-background-picture-image_123015.jpg" style="background-size:cover;">
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-2"></div>
+         <div class="col-8 mt-5 ms-auto" >
+					<center>
+					<h1 style ="color:white; font-family:Rockwell; font-size: 50px"><b>Update Student</b></h1>
+					</center>
+            <a href="javascript:history.back()">
+                <button class="pull-right btn btn-warning">
+                <i class="fas fa-arrow-left"></i> Back
+                </button>
+            </a>
+            <hr>
+            {% for student in student %}
+            <form action='' method = "POST">
+                        <div class="form-group text-light">
+                            <p>ID <input form-control type = "number" name = "ID" class="form-control" required="yes" readonly value="{{ student.ID }}"/></p>
+                            <p>Name <input form-control type = "text" name = "Name" class="form-control" required="yes" autocomplete="no" value="{{ student.Name }}"/></p>
+                            <p>Course <input type = "text" name = "Course" class="form-control" required="yes" autocomplete="no" value="{{ student.Course }}"/></p>
+                            <p>Year <input type = "number" name = "Year" class="form-control" required="yes" autocomplete="no" value="{{ student.Year }}"/></p>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>PRELIM  <input type = "number" name = "PRELIM" class="form-control" required="yes" autocomplete="no" value="{{ student.PRELIM }}"/></p>
+                            </div>
+                            <div class="col">
+                                <p>MIDTERM <input type = "number" name = "MIDTERM" class="form-control" required="yes" autocomplete="no" value="{{ student.MIDTERM }}"/></p>
+                            </div>
+                            <div class="col">
+                                <p>FINALS <input type = "number" name = "FINALS" class="form-control" required="yes" autocomplete="no" value="{{ student.FINALS }}"/></p>
+                            </div>
+                            <p><input type = "submit" value = "Update" class="btn btn-dark" class="form-control" autocomplete="no" /></p>
+                        </div>
+            </form>
+            {% endfor %}
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
